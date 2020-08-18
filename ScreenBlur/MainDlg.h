@@ -241,10 +241,11 @@ class CMainDlg : public CDialogImpl<CMainDlg>,
                        WORD /*wID*/,
                        HWND /*hWndCtl*/,
                        BOOL& /*bHandled*/) {
+    paused_ = !paused_;
     if (paused_) {
-      SetTimer(IDR_MAINFRAME, 5000);
-    } else {
       KillTimer(IDR_MAINFRAME);
+    } else {
+      SetTimer(IDR_MAINFRAME, 5000);
     }
     return 0;
   }
