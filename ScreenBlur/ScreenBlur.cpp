@@ -1,3 +1,10 @@
+/*
+ *  MIT License
+ *
+ * Copyright 2020-present UMU618.com, UMUTech.com
+ *
+ */
+
 #include "stdafx.h"
 
 #include <atlctrls.h>

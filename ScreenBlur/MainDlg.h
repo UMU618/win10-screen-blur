@@ -1,7 +1,13 @@
+/*
+ *  MIT License
+ *
+ * Copyright 2020-present UMU618.com, UMUTech.com
+ *
+ */
+
 #pragma once
 
 extern CString g_app_id;
-
 
 class CMainDlg : public CDialogImpl<CMainDlg>,
                  public CUpdateUI<CMainDlg>,
@@ -94,9 +100,9 @@ class CMainDlg : public CDialogImpl<CMainDlg>,
   }
 
   LRESULT OnMouseMove(UINT /*uMsg*/,
-               WPARAM /*wParam*/,
-               LPARAM lParam,
-               BOOL& /*bHandled*/) {
+                      WPARAM /*wParam*/,
+                      LPARAM lParam,
+                      BOOL& /*bHandled*/) {
     if (-1 == x_ || -1 == y_) {
       x_ = GET_X_LPARAM(lParam);
       y_ = GET_Y_LPARAM(lParam);
@@ -122,7 +128,8 @@ class CMainDlg : public CDialogImpl<CMainDlg>,
     PrepareMenu(popup_menu);
     popup_menu.SetMenuDefaultItem(ID_APP_ABOUT);
     popup_menu.TrackPopupMenuEx(TPM_RIGHTALIGN | TPM_BOTTOMALIGN,
-                                GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam), m_hWnd);
+                                GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam),
+                                m_hWnd);
     return 0;
   }
 
